@@ -6,7 +6,7 @@ const Events = () => {
     const [user]=useContext(UserContext)
     const [events, setEvents]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/my-events?email=${user.email}`,{
+        fetch(`https://sheltered-dusk-29819.herokuapp.com/my-events?email=${user.email}`,{
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
@@ -20,7 +20,7 @@ const Events = () => {
     })
 
     const calcelEventHandler=(id)=>{
-        fetch('http://localhost:5000/cancel-event',{
+        fetch('https://sheltered-dusk-29819.herokuapp.com/cancel-event',{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',
@@ -38,6 +38,7 @@ const Events = () => {
 
     return (
         <div>
+        
             <Grid container item xs={11} justify='center'  spacing='5' className='mx-auto'>
                 {
                     events.map(event=>{

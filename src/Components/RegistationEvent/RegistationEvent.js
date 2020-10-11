@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FormControl, FormGroup, Input, InputLabel } from '@material-ui/core';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
@@ -9,9 +9,10 @@ const RegistationEvent = () => {
     const history=useHistory()
     const [user]=useContext(UserContext)
     const [taskInfo, setTaskInfo]=useState({eventName:user.event?.name, name:user.name, email:user.email, img:user.event?.img})
+
     const submitFormHandler=(event)=>{
         event.preventDefault()
-        fetch('http://localhost:5000/taskRegister',{
+        fetch('https://sheltered-dusk-29819.herokuapp.com/taskRegister',{
             method:'POST', 
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(taskInfo)

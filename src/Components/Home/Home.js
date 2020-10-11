@@ -16,7 +16,7 @@ const Home = () => {
 
     const [allTasks, setAllTasks]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allTasks')
+        fetch('https://sheltered-dusk-29819.herokuapp.com/allTasks')
         .then(res=>res.json() )
         .then(result=>{
             
@@ -32,6 +32,7 @@ const Home = () => {
 
     return (
         <div>
+            { allTasks.length<1&& <h1 className='mx-auto '>Loading.....</h1>}
             <div id='home-wrapper'>
                 <div className='text-center my-5'>
                     <h2 className='m-5'>I GROW BY HELPING PEOPLE IN NEED</h2>

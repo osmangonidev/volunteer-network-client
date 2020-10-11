@@ -47,7 +47,7 @@ const Admin = () => {
     const classes=useStyles();
 
     useEffect(()=>{ 
-        fetch(`http://localhost:5000/all-registered-events?email=${user.email}`,{
+        fetch(`https://sheltered-dusk-29819.herokuapp.com/all-registered-events?email=${user.email}`,{
             method:'GET', 
             headers:{
                 'Content-Type':'application/json',
@@ -64,7 +64,7 @@ const Admin = () => {
     
 
     const eventDeleteHandler=(id)=>{
-        fetch('http://localhost:5000/cancel-event',{
+        fetch('https://sheltered-dusk-29819.herokuapp.com/cancel-event',{
             method:'DELETE',
             headers:{
                 'Content-Type':'application/json',
